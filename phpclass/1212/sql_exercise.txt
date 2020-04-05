@@ -1,0 +1,42 @@
+SELECT ROUND(84.94,2);  //四捨五入(數字,到小數點後第幾位)
+SELECT ROUND(84.94,1);	//到小數點後第一位
+SELECT ROUND(84.94,0);	//到整數位
+SELECT ROUND(84.94,-1);	//到整數第二位
+
+SELECT DATE_FORMAT('2019-12-01','%Y');	//輸出完整年分
+SELECT DATE_FORMAT('2019-12-01','%y');	//輸出年份後兩位
+SELECT DATE_FORMAT('2019-12-01','%M');	//輸出英文的月份
+SELECT DATE_FORMAT('2019-12-01','%m');	//輸出數字的月份
+SELECT DATE_FORMAT('2019-12-01','%D');	//輸出1st
+SELECT DATE_FORMAT('2019-12-01','%d');	//輸出數字
+
+SELECT NOW();			//輸出現在時間	2019-12-12 16:16:31
+SELECT YEAR(NOW());		//輸出現在時間的年份	2019
+SELECT MONTH(NOW()):	//輸出現在時間的月份	12
+SELECT DAY(NOW());		//輸出現在時間的日		12
+
+SELECT DATE_SUB('2019-12-01',INTERVAL 1 DAY);		//2019-11-30
+SELECT DATE_SUB('2019-12-01',INTERVAL -1 DAY);		//2019-12-02
+SELECT DATE_SUB('2019-12-01',INTERVAL 1 MONTH);		//2019-11-01
+SELECT DATE_SUB('2019-12-01',INTERVAL 1 YEAR);		//2018-12-02
+
+SELECT LEFT ('abcdefgh',3);		//從字串左邊取內容(字串,取多少個)
+SELECT RIGHT ('abcdefgh',3);	//從字串右邊取內容(字串,取多少個)	
+
+SELECT SUBSTRING('abcdefgh',2,4);			//從字串中間取內容(字串,第幾個位置,取幾個內容)
+SELECT SUBSTRING('日一二三四五六',3,2);
+
+SELECT name 學生姓名,CHI 中文分數,ENG 英文分數 FROM students;	//欄位後面空一格可以輸入文字作為該欄位的暱稱
+
+SELECT sno 學號,LEFT(name,1) 學生姓氏, CHI 中文分數, ENG 英文分數 FROM students;	//課堂練習
+SELECT sno 學號,LEFT(name,1) 學生姓氏,LEFT(address,3) 縣市, CHI 中文分數, ENG 英文分數 FROM students;
+SELECT sno 學號,LEFT(name,1) 學生姓氏,LEFT(address,3) 縣市,SUBSTRING(birthday,6,2) 出生月份, CHI 中文分數, ENG 英文分數 FROM students;
+SELECT sno 學號,LEFT(name,1) 學生姓氏,LEFT(address,3) 縣市,MONTH(birthday) 出生月份, CHI 中文分數, ENG 英文分數 FROM students;
+
+SELECT * FROM students WHERE CHI = 90
+SELECT * FROM students WHERE ENG >= 80
+SELECT * FROM students WHERE ENG >= 80 AND ENG <=90
+SELECT * FROM students WHERE (ENG >= 80 AND MATH >= 80) AND (ENG <=90 AND ENG <= 90)
+SELECT * FROM students WHERE ENG >= 80 AND (LEFT(address,2) = "台北" OR LEFT(address,2) = "新北")
+SELECT * FROM students WHERE ENG >= 80 AND (LEFT(address,2) = "台北" OR LEFT(address,2) = "新北") ORDER BY ENG DESC;
+

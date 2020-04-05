@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>表單應用</title>
+  </head>
+  <body>
+    <h2 align="center">表單應用-HTML畫面</h2>
+    <hr />
+
+    <b>個人資料</b>
+    <form action="ex01Get2.php" method="post">
+      您的姓名：<input type="text" name="usrname" /><br />
+      您的密碼：<input type="password" name="usrpsd" /><br />
+      住址：<input type="text" name="address" size="50" /><br />
+      性別：<input type="radio" name="sex" value="男" checked="true" />男
+      <input type="radio" name="sex" value="女" />女<br />
+      喜愛網站：<select name="web">
+        <option value="Yahoo!奇摩">Yahoo!奇摩</option>
+        <option value="momo購物" selected="true">momo購物</option>
+        <option value="蝦皮購物">蝦皮購物</option>
+        <option value="元智大學">元智大學</option> </select
+      ><br />
+      興趣：<input type="checkbox" name="interest[]" value="宅在家裡" />宅在家裡
+      <input type="checkbox" name="interest[]" value="滑滑手機" />滑滑手機
+      <input type="checkbox" name="interest[]" value="戶外活動" />戶外活動
+      <input type="checkbox" name="interest[]" value="社團活動" />社團活動
+
+      <br />
+      <input type="submit" value="送出資料" />
+      <input type="reset" value="清除資料" />
+    </form>
+  </body>
+</html>

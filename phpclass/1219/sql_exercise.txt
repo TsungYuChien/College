@@ -1,0 +1,16 @@
+﻿SELECT * FROM students;
+SELECT sno, name, MATH FROM students;
+SELECT sno 學號,name 姓名,MATH 數學成績 FROM students;
+
+SELECT * FROM students WHERE MATH >= 80;
+SELECT * FROM students WHERE MATH >= 80 AND MATH <=90;
+SELECT * FROM students WHERE left(address,3)='台北市';
+
+SELECT *, (CHI+ENG+MATH+COM) FROM students;
+SELECT *, (CHI+ENG+MATH+COM) 總分 FROM students;
+
+SELECT * FROM students WHERE left(name,1)="張";		//秀出姓張的學生
+SELECT * FROM students WHERE name like "張%";		//秀出students中有(張....)的東西 %->不管長度
+SELECT * FROM students WHERE name like "張__";		//秀出students中有(張....)的東西 _->一個底線代表一個長度 
+
+SELECT * FROM students WHERE name like "%人%";		
